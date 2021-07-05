@@ -1,0 +1,108 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using CarService.Models
+@model CarService.Models.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h5>
+    <p>
+        <ul>
+            <li>The occupied and elapsed appointments are red.</li>
+            <li>The free appointments are green.</li>
+            <li>Your appointments are blue.</li>
+        </ul>
+    </p>
+</h5>
+
+@foreach (var calendar in Model.Calendars.Values)
+{
+    var mechanic = calendar.Mechanic;
+    <div style="padding-top: 25px;"><b>@mechanic.Name</b></div>
+    <table border="1" width="90%">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                @for (int i = 0; i < 7; i++)
+                {
+                    <th scope="col" style="align-content: center">
+                        @DateTime.Now.AddDays(i).DayOfWeek
+                    </th>
+                }
+            </tr>
+        </thead>
+
+        @for (int i = 0; i < 8; i++)
+        {
+            <tr>
+                @for (int j = 0; j < 7; j++)
+                {
+                    var day = DateTime.Now.AddDays(j).DayOfWeek;
+                    if (j == 0)
+                    {
+                        var hour = i + 9 + ":00";
+                        <td style="">
+                            <div>@hour</div>
+                        </td>
+                    }
+                    string status;
+                    switch (calendar.Reservations[day][i].Status)
+                    {
+                        case ReservationStatus.Free:
+                            status = "free";
+                            break;
+                        case ReservationStatus.Elapsed:
+                            status = "occupied";
+                            break;
+                        case ReservationStatus.Occupied:
+                            status = "occupied";
+                            break;
+                        case ReservationStatus.Owned:
+                            status = "own";
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+
+                    string link = "#";
+                    if (calendar.Reservations[day][i].Status == ReservationStatus.Free)
+                    {
+                        link = (Url.Action("Create", "Reservation", new { mechanicId = mechanic.Id, day = j, hour = i }));
+                    }
+                    else if (calendar.Reservations[day][i].Status == ReservationStatus.Owned)
+                    {
+                        link = (Url.Action("Delete", "Reservation", new { Id = calendar.Reservations[day][i].Reservation.Id }));
+                    }
+                    <td width="13%"
+                        onClick="window.location.href = '@link'"
+                        class="@(status) tdCalendar" />
+                }
+            </tr>
+        }
+    </table>
+}
+
+<style>
+    .tdCalendar {
+        cursor: pointer;
+    }
+
+    .own {
+        background-color: dodgerblue;
+    }
+
+    .free {
+        background-color: limegreen;
+    }
+
+    .occupied {
+        background-color: red;
+    }
+
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>

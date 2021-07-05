@@ -1,0 +1,16 @@
+D:\stuff\5.felev\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.deps.json
+D:\stuff\5.felev\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.dll
+D:\stuff\5.felev\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.csprojAssemblyReference.cache
+D:\stuff\5.felev\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.AssemblyInfoInputs.cache
+D:\stuff\5.felev\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.AssemblyInfo.cs
+D:\stuff\5.felev\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.pdb
+D:\stuff\5.felev\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.dll
+D:\stuff\5.felev\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.pdb
+D:\stuff\5.felev\waf\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.deps.json
+D:\stuff\5.felev\waf\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.dll
+D:\stuff\5.felev\waf\CarService\CarService.Data\bin\Debug\netstandard2.0\CarService.Data.pdb
+D:\stuff\5.felev\waf\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.AssemblyInfoInputs.cache
+D:\stuff\5.felev\waf\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.AssemblyInfo.cs
+D:\stuff\5.felev\waf\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.dll
+D:\stuff\5.felev\waf\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.pdb
+D:\stuff\5.felev\waf\CarService\CarService.Data\obj\Debug\netstandard2.0\CarService.Data.csprojAssemblyReference.cache
